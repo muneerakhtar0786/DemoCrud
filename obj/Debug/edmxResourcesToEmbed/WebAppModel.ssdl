@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Catagory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Gendar" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityId" Type="bigint" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Cities">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tbl_Catagory_tbl_Cities">
+    <End Role="tbl_Cities" Type="Self.tbl_Cities" Multiplicity="0..1" />
+    <End Role="tbl_Catagory" Type="Self.tbl_Catagory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Cities">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="tbl_Catagory">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebAppModelStoreContainer">
+    <EntitySet Name="tbl_Catagory" EntityType="Self.tbl_Catagory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Cities" EntityType="Self.tbl_Cities" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbl_Catagory_tbl_Cities" Association="Self.FK_tbl_Catagory_tbl_Cities">
+      <End Role="tbl_Cities" EntitySet="tbl_Cities" />
+      <End Role="tbl_Catagory" EntitySet="tbl_Catagory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

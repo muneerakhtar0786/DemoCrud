@@ -1,0 +1,58 @@
+﻿
+@model IEnumerable<tbl_Catagory>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebAppDbContext db = new WebAppDbContext();
+}
+
+
+<script>
+    function comfirmDelete()
+    {
+        return confirm('Are you sure, you want to delete this record??');
+    }
+</script>
+
+
+
+<h2>List Cotagory</h2>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Gendar</th>
+        <th>Created Date</th>
+        <th>Button</th>
+    </tr>
+
+  @foreach (var item in Model)
+  {
+      var city = db.tbl_Cities.FirstOrDefault(x => x.CityId == item.CityId);
+<tr>
+    <td>@item.CategoryId</td>
+    <td>@item.EmpName</td>
+    <td>@item.Address</td>
+    <td>@if (city != null)
+      {
+        <span>@city.CityName</span>
+      } 
+     else 
+     {
+    <span>N/A</span>
+    }</td>
+    <td>@item.Gendar</td>
+    <td>@item.CreatedOn</td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", "Home", new { id = item.CategoryId }, htmlAttributes: new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Delete", "Delete", "Home", new { categoryId = item.CategoryId }, htmlAttributes: new { @class = "btn btn-danger", onclick = "return comfirmDelete()" })
+    </td>
+</tr>
+    }
+
+</table>
+

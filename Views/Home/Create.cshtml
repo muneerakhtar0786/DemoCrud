@@ -1,0 +1,75 @@
+﻿
+
+@model tbl_Catagory
+
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<br />
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmpName, new { @class = "col-md-2 text-right" })
+
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.EmpName, new { @class = "form-control", @placeholder = "EmpName" })
+            @Html.ValidationMessageFor(m => m.EmpName)
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address, new { @class = "col-md-2 text-right" })
+
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @placeholder = "EmpName" })
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gendar, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <label class="radio-inline">
+                @Html.RadioButtonFor(model => model.Gendar, "Male", new { @name = "gendar" })
+                Male
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButtonFor(model => model.Gendar, "Female", new { @name = "gendar" })
+                Female
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">
+            City
+        </label>
+        <div class="col-md-10">
+
+            @Html.DropDownListFor(model => model.CityId, ViewBag.CityList as SelectList, "--Select City--", new { @class = "form-control" })
+
+        </div>
+    </div>
+    
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+
+
+
+}
+
