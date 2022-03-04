@@ -23,10 +23,12 @@
     <tr>
         <th>EmpID</th>
         <th>Name</th>
+        <th>DOB</th>
         <th>Address</th>
         <th>City</th>
         <th>Gendar</th>
         <th>Created Date</th>
+        <th>Hobbies</th>
         <th>Button</th>
     </tr>
 
@@ -36,6 +38,7 @@
 <tr>
     <td>@item.CategoryId</td>
     <td>@item.EmpName</td>
+    <td>@item.DOB</td>
     <td>@item.Address</td>
     <td>@if (city != null)
       {
@@ -47,6 +50,12 @@
     }</td>
     <td>@item.Gendar</td>
     <td>@item.CreatedOn</td>
+    <td>@if (item.CricketHobby) { 
+        <span>Cricket,</span>
+    }
+    @if (item.MusicHobby) { 
+        <span>Music</span>
+    }</td>
     <td>
         @Html.ActionLink("Edit", "Edit", "Home", new { id = item.CategoryId }, htmlAttributes: new { @class = "btn btn-primary" }) |
         @Html.ActionLink("Delete", "Delete", "Home", new { categoryId = item.CategoryId }, htmlAttributes: new { @class = "btn btn-danger", onclick = "return comfirmDelete()" })

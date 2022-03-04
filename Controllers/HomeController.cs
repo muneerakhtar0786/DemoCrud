@@ -33,7 +33,7 @@ namespace DemoCrud.Controllers
         }
         [HttpPost]
         public ActionResult Create(tbl_Catagory catagory)
-        {
+            {
             if (ModelState.IsValid)
             {
                 WebAppDbContext db = new WebAppDbContext();

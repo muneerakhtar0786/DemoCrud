@@ -17,6 +17,9 @@
           <ScalarProperty Name="Gendar" ColumnName="Gendar" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="MusicHobby" ColumnName="MusicHobby" />
+          <ScalarProperty Name="CricketHobby" ColumnName="CricketHobby" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
         </MappingFragment>
       </EntityTypeMapping>

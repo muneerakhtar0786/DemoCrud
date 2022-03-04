@@ -11,6 +11,9 @@
           </Key>
           <Property Name="CategoryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmpName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+          <Property Name="MusicHobby" Type="bit"  />
+          <Property Name="CricketHobby" Type="bit" />
           <Property Name="Address" Type="nvarchar(max)" />
           <Property Name="Gendar" Type="nvarchar" MaxLength="50" />
           <Property Name="CityId" Type="bigint" />
@@ -69,6 +72,10 @@
           </Key>
           <Property Name="CategoryId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MusicHobby" Type="Boolean"/>
+          <Property Name="CricketHobby" Type="Boolean"/>
+			
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Gendar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CityId" Type="Int64" />
@@ -109,6 +116,10 @@
                 <ScalarProperty Name="Gendar" ColumnName="Gendar" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="MusicHobby" ColumnName="MusicHobby" />
+                <ScalarProperty Name="CricketHobby" ColumnName="CricketHobby" />
+				  
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
               </MappingFragment>
             </EntityTypeMapping>

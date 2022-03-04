@@ -22,6 +22,9 @@ namespace DemoCrud
         public string EmpName { get; set; }
         public string Address { get; set; }
         public string Gendar { get; set; }
+        public string DOB { get; set; }
+        public Boolean MusicHobby { get; set; }
+        public Boolean CricketHobby { get; set; }
         public Nullable<long> CityId { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
     

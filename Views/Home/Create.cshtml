@@ -34,6 +34,25 @@
         </div>
 
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DOB, new { @class = "col-md-2 text-right" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.DOB)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusicHobby, new { @class = "col-md-2 text-right" })
+        <div class="col-md-4">
+            @Html.CheckBoxFor(m => m.MusicHobby)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CricketHobby, new { @class = "col-md-2 text-right" })
+        <div class="col-md-4">
+            @Html.CheckBoxFor(m => m.CricketHobby)
+        </div>
+    </div>
 
 
     <div class="form-group">
@@ -50,9 +69,10 @@
         </div>
     </div>
 
+
     <div class="form-group">
         <label class="control-label col-md-2">
-            City
+            State
         </label>
         <div class="col-md-10">
 
@@ -60,7 +80,7 @@
 
         </div>
     </div>
-    
+
 
 
     <div class="form-group">
